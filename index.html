@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rosie - Happy Rose Day</title>
+    <title>Rosie - Long Distance Rose Day</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Quicksand', sans-serif;
-            background-color: #fff5f5;
+            background-color: #fffafb;
         }
         .font-cursive {
             font-family: 'Dancing Script', cursive;
@@ -21,11 +21,104 @@
             90% { opacity: 1; }
             100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
         }
-        .petal {
+        .petal-bg {
             position: absolute;
             pointer-events: none;
             z-index: 0;
             animation: float linear infinite;
+        }
+
+        /* CSS ROSE STYLING */
+        .rose-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #fffafb, #ffffff);
+            overflow: hidden;
+        }
+
+        .rose {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            animation: sway 4s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        .rose-flower {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: -20px;
+            left: 10px;
+            z-index: 2;
+            animation: bloom 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .rose-petal {
+            position: absolute;
+            background: radial-gradient(circle at center, #ff4d6d, #c9184a);
+            width: 50px;
+            height: 50px;
+            border-radius: 50% 50% 10% 50%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Petal layers */
+        .rose-petal:nth-child(1) { transform: rotate(0deg) translate(0, 0); z-index: 5; width: 40px; height: 40px; top: 20px; left: 20px; }
+        .rose-petal:nth-child(2) { transform: rotate(72deg) translate(5px, 0); z-index: 4; opacity: 0.9; }
+        .rose-petal:nth-child(3) { transform: rotate(144deg) translate(5px, 0); z-index: 3; opacity: 0.8; }
+        .rose-petal:nth-child(4) { transform: rotate(216deg) translate(5px, 0); z-index: 2; opacity: 0.7; }
+        .rose-petal:nth-child(5) { transform: rotate(288deg) translate(5px, 0); z-index: 1; opacity: 0.6; }
+        
+        /* Outer petals */
+        .rose-petal:nth-child(6) { transform: rotate(45deg) scale(1.2); opacity: 0.5; top: 10px; left: 10px; width: 60px; height: 60px; }
+        .rose-petal:nth-child(7) { transform: rotate(135deg) scale(1.2); opacity: 0.5; top: 10px; left: 10px; width: 60px; height: 60px; }
+        .rose-petal:nth-child(8) { transform: rotate(225deg) scale(1.2); opacity: 0.5; top: 10px; left: 10px; width: 60px; height: 60px; }
+
+        .rose-stem {
+            position: absolute;
+            width: 4px;
+            height: 150px;
+            background: linear-gradient(to bottom, #2d6a4f, #1b4332);
+            left: 48px;
+            top: 50px;
+            border-radius: 2px;
+            z-index: 1;
+        }
+
+        .rose-leaf {
+            position: absolute;
+            width: 30px;
+            height: 15px;
+            background: #40916c;
+            border-radius: 50% 0 50% 0;
+            z-index: 1;
+        }
+
+        .rose-leaf.left {
+            left: 20px;
+            top: 100px;
+            transform: rotate(-30deg);
+        }
+
+        .rose-leaf.right {
+            left: 50px;
+            top: 120px;
+            transform: rotate(210deg);
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+
+        @keyframes bloom {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
     </style>
 <script type="importmap">

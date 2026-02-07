@@ -1,3 +1,3 @@
 
-// This file is intentionally left blank as the application now uses local content.
-export const _placeholder = true;
+// This file is no longer required as all API functionality has been removed.
+export const _noApi = true;
