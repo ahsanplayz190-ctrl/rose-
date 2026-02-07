@@ -1,7 +1,5 @@
 {
-  "name": "Rosie - Your Sweet Rose Day Companion",
-  "description": "A delightful, cute website to generate personalized Rose Day greetings, poems, and digital roses for your loved ones using Gemini AI.",
-  "requestFramePermissions": [
-    "microphone"
-  ]
+  "name": "Rosie - Sweet Rose Day Greeting",
+  "description": "A delightful, cute website to browse and send Rose Day greetings with beautiful imagery and poems.",
+  "requestFramePermissions": []
 }
